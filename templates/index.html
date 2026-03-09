@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsureIQ — Insurance Cost Predictor</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+
+<!-- Fixed background -->
+<div class="bg-fixed">
+  <div class="bg-mesh"></div>
+  <div class="bg-grid"></div>
+  <div class="particle" style="left:7%;width:4px;height:4px;background:var(--accent);opacity:.12;animation-duration:14s;animation-delay:0s;"></div>
+  <div class="particle" style="left:22%;width:3px;height:3px;background:var(--green);opacity:.10;animation-duration:19s;animation-delay:5s;"></div>
+  <div class="particle" style="left:48%;width:5px;height:5px;background:var(--accent);opacity:.08;animation-duration:16s;animation-delay:9s;"></div>
+  <div class="particle" style="left:71%;width:3px;height:3px;background:var(--amber);opacity:.10;animation-duration:21s;animation-delay:2s;"></div>
+  <div class="particle" style="left:89%;width:4px;height:4px;background:var(--green);opacity:.08;animation-duration:12s;animation-delay:7s;"></div>
+</div>
+
+<!-- ─── NAVBAR ─────────────────────────────── -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dot"></div>
+    <div class="nav-name">InsureIQ</div>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" href="#home">Home</a>
+    <a class="nav-link" href="#predict">How It Works</a>
+    <button class="nav-cta" onclick="document.getElementById('predict').scrollIntoView({behavior:'smooth'})">
+      Get Estimate →
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 1 — HERO
+═══════════════════════════════════════════ -->
+<section id="home">
+
+  <div class="hero-eyebrow">
+    <span class="eyebrow-dot"></span>
+    ML-Powered · Real-Time · Accurate
+  </div>
+
+  <h1 class="hero-h1">
+    Know Your<br>
+    <span class="ac">Insurance</span><br>
+    <span class="dim">Cost Instantly.</span>
+  </h1>
+
+  <p class="hero-para">
+    InsureIQ uses a trained machine learning model to predict your annual
+    health insurance premium in seconds — based on 6 simple inputs about you.
+    No signup. No waiting. No brokers.
+  </p>
+
+  <div class="hero-btns">
+    <button class="btn-main" onclick="document.getElementById('predict').scrollIntoView({behavior:'smooth'})">
+      Get My Estimate <span class="btn-arr">→</span>
+    </button>
+    <button class="btn-ghost" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
+      ↓ How It Works
+    </button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-strip">
+    <div class="s-item">
+      <div class="s-num">1338<em>+</em></div>
+      <div class="s-lbl">Training<br>Records</div>
+    </div>
+    <div class="s-item">
+      <div class="s-num">86<em>%</em></div>
+      <div class="s-lbl">Model<br>Accuracy</div>
+    </div>
+    <div class="s-item">
+      <div class="s-num">6</div>
+      <div class="s-lbl">Risk<br>Factors</div>
+    </div>
+    <div class="s-item">
+      <div class="s-num">&lt;1<em>s</em></div>
+      <div class="s-lbl">Response<br>Time</div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="feat-grid">
+    <div class="feat-card">
+      <span class="fc-icon">🧬</span>
+      <div class="fc-title">Profile Analysis</div>
+      <div class="fc-desc">Age, BMI, smoking status, region — every factor precisely weighted by the regression model.</div>
+    </div>
+    <div class="feat-card">
+      <span class="fc-icon">⚡</span>
+      <div class="fc-title">Zero Page Reload</div>
+      <div class="fc-desc">AJAX-powered prediction — your estimate appears instantly without any page refresh.</div>
+    </div>
+    <div class="feat-card">
+      <span class="fc-icon">🔒</span>
+      <div class="fc-title">Private & Stateless</div>
+      <div class="fc-desc">Your data is never stored. Every prediction runs in complete isolation.</div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="how-section" id="how">
+    <div class="how-title">How It Works</div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="hs-num">01</div>
+        <div class="hs-title">Fill Your Profile</div>
+        <div class="hs-desc">Enter age, BMI, gender, children, smoking status, and region. Takes under 30 seconds.</div>
+      </div>
+      <div class="how-step">
+        <div class="hs-num">02</div>
+        <div class="hs-title">Model Analyzes</div>
+        <div class="hs-desc">Our ML regression model processes your inputs against 1,338 real insurance records.</div>
+      </div>
+      <div class="how-step">
+        <div class="hs-num">03</div>
+        <div class="hs-title">Get Your Estimate</div>
+        <div class="hs-desc">Your predicted annual premium appears instantly — clean, rounded, no floating point noise.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-down" onclick="document.getElementById('predict').scrollIntoView({behavior:'smooth'})">
+    <div class="scroll-line"></div>
+    <span>Scroll to predict</span>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2 — FORM
+═══════════════════════════════════════════ -->
+<section id="predict">
+
+  <div class="form-section-header">
+    <div class="form-tag">AI-Powered Estimator</div>
+    <h2 class="form-section-title">Your <span>Risk</span> Profile</h2>
+    <p class="form-section-sub">Complete the form below to get your personalized premium estimate</p>
+  </div>
+
+  <div class="form-layout">
+
+    <!-- LEFT — FORM -->
+    <div>
+      <div class="form-card">
+        <div class="form-title">Insurance Details</div>
+        <div class="form-sub">All fields required · Result appears without page reload</div>
+
+        <!-- AJAX form — intercepts submit via JS, no page reload -->
+        <form id="ins-form">
+          <input type="hidden" id="h-smoker" name="smoker" value="0">
+          <input type="hidden" id="h-region" name="region" value="0">
+
+          <!-- Personal -->
+          <div class="sec"><span class="sec-dot"></span>Personal Info</div>
+          <div class="row">
+            <div class="field">
+              <label>Age</label>
+              <input type="number" name="age" id="f-age" placeholder="e.g. 34" min="18" max="100">
+            </div>
+            <div class="field">
+              <label>Sex</label>
+              <select name="gender" id="f-gender">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label>BMI</label>
+              <input type="number" step="0.1" name="bmi" id="bmi-in" placeholder="e.g. 24.5" min="10" max="60">
+              <div class="bmi-track"><div class="bmi-fill" id="bmi-fill"></div></div>
+              <div class="bmi-hint" id="bmi-hint">Enter your BMI above</div>
+            </div>
+            <div class="field">
+              <label>Children</label>
+              <input type="number" name="children" id="f-children" placeholder="0" min="0" max="10">
+            </div>
+          </div>
+
+          <!-- Smoking -->
+          <div class="sec" style="margin-top:4px"><span class="sec-dot"></span>Smoking Status</div>
+          <div class="chips">
+            <div class="chip on-no" id="chip-no" onclick="setSmoker(0)">
+              <span class="ci">🚭</span>Non-Smoker
+            </div>
+            <div class="chip" id="chip-yes" onclick="setSmoker(1)">
+              <span class="ci">🚬</span>Smoker
+            </div>
+          </div>
+
+          <!-- Region -->
+          <div class="sec"><span class="sec-dot"></span>Coverage Region</div>
+          <div class="regions">
+            <div class="rc on" id="rc-0" onclick="setRegion(0)">
+              <span class="rf">🌲</span>
+              <div><div class="rn">Northwest</div><div class="rs">WA · OR · ID</div></div>
+            </div>
+            <div class="rc" id="rc-1" onclick="setRegion(1)">
+              <span class="rf">🏙️</span>
+              <div><div class="rn">Northeast</div><div class="rs">NY · MA · CT</div></div>
+            </div>
+            <div class="rc" id="rc-2" onclick="setRegion(2)">
+              <span class="rf">🌴</span>
+              <div><div class="rn">Southeast</div><div class="rs">FL · GA · NC</div></div>
+            </div>
+            <div class="rc" id="rc-3" onclick="setRegion(3)">
+              <span class="rf">🌵</span>
+              <div><div class="rn">Southwest</div><div class="rs">TX · AZ · NM</div></div>
+            </div>
+          </div>
+
+          <button type="button" class="sub-btn" id="sub-btn" onclick="submitForm()">
+            → Calculate My Premium
+          </button>
+
+          <!-- Result appears here via JS — no reload -->
+          <div class="result-box" id="result-box">
+            <div class="result-inner">
+              <div class="res-icon">💰</div>
+              <div>
+                <div class="res-label">Estimated Annual Premium</div>
+                <div class="res-val" id="res-val">—</div>
+                <div class="res-note">Based on your profile · Actual costs may vary by insurer</div>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- RIGHT — SIDEBAR -->
+    <div class="form-sidebar">
+      <div class="sidebar-stats">
+        <div class="ss-item">
+          <div class="ss-n">1338<sup>+</sup></div>
+          <div class="ss-l">Records</div>
+        </div>
+        <div class="ss-item">
+          <div class="ss-n">86<sup>%</sup></div>
+          <div class="ss-l">Accuracy</div>
+        </div>
+        <div class="ss-item">
+          <div class="ss-n">6</div>
+          <div class="ss-l">Features</div>
+        </div>
+        <div class="ss-item">
+          <div class="ss-n">&lt;1s</div>
+          <div class="ss-l">Response</div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <span class="sc-icon">🧬</span>
+        <div class="sc-title">How Your Data Is Used</div>
+        <div class="sc-desc">Your 6 inputs are passed to a linear regression model trained on real US insurance data. Each factor is weighted by its statistical correlation with insurance cost.</div>
+      </div>
+      <div class="sidebar-card">
+        <span class="sc-icon">💡</span>
+        <div class="sc-title">Biggest Cost Drivers</div>
+        <div class="sc-desc">Smoking status has the strongest impact — smokers pay up to 3× more. BMI above 30 and age above 50 also significantly increase premiums.</div>
+      </div>
+      <div class="sidebar-card">
+        <span class="sc-icon">⚠️</span>
+        <div class="sc-title">Disclaimer</div>
+        <div class="sc-desc">This is an ML estimate for educational purposes. Actual insurance costs depend on your specific plan, provider, and eligibility criteria.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────── -->
+<footer>
+  Built with <span>InsureIQ</span> · ML-Powered Insurance Estimation · For Educational Use Only
+</footer>
+<script src="./static/script.js"></script>
+
+</body>
+</html>
